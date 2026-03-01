@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Sillyfied</title>
+    <link rel="stylesheet" href="styles.css">
+
+    <meta content="Project Sillyfied" property="og:title" />
+    <meta content="Work in progress..." property="og:description" />
+    <meta content="https://projsil.github.io" property="og:url" />
+    <meta content="https://sillyfications.github.io/silds/demos/demos-content/icon.png" property="og:image" />
+    <meta content="#fb7e14" data-react-helmet="true" name="theme-color" />
+
+
+
+    <link rel="icon" type="image/png" href="https://sillyfications.github.io/silds/demos/demos-content/icon.png">
+</head>
+
+<body onload="openTab()">
+    <div class="border">
+        <div class="top-flex">
+            <div class="border-flex">
+                <img src="assets/icon.png" alt="Storage Room Recordings icon" class="logo" title="Demo Browser for recorded Storage Room recordings" />
+                <p>Project Sillyfied landing page</p>
+            </div>
+            
+        </div>
+
+        <div class="content">Amazing things are coming soon...</div>
+        
+
+    </div>
+
+    <script>
+        function closeTab() {
+            window.close();
+        }
+
+        // firefox wont close the tab if it was opened by a script, good for security reasons, but not when we want to mimic a window on a desktop or something
+        // open one tab, after that dont do anything
+        //the downside is that it will show a pop-up, some users might have them disabled.
+        function openTab() {
+            let alreadyOpen = false;
+
+            if (window.opener) {
+                const tabs = window.opener.document.querySelectorAll('.border');
+                for (let i = 0; i < tabs.length; i++) {
+                    if (tabs[i].style.display !== 'none') {
+                        alreadyOpen = true;
+                        break;
+                    }
+                }
+            }
+            //window.open('demos.html', '_blank');
+        }
+    </script>
+</body>
+
+</html>
